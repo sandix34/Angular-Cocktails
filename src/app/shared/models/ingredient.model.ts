@@ -7,3 +7,21 @@ export class Ingredient {
     this.quantity = quantity;
   }
 }
+
+
+/*
+
+shortcut
+-----------
+
+export class Ingredient {
+
+  constructor(
+    public name:string,
+    public quantity:number)
+  {}
+
+}
+
+
+*/
