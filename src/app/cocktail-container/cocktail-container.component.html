@@ -1,6 +1,4 @@
 <div class="row">
-  <!--récupérer l'évènement pickEvent grâce à la liaison d'évènement
-      puis exécuter la méthode pickCoktail() en passant la valeur émise paar l'EventEmitter-->
-  <app-cocktails-list (pickEvent)=pickCocktail($event) [cocktails]='cocktails' class='col-5'></app-cocktails-list>
-  <app-cocktails-details [cocktail]="cocktail" class="col-7"></app-cocktails-details>
+  <app-cocktails-list class='col-5'></app-cocktails-list>
+  <app-cocktails-details class="col-7"></app-cocktails-details>
 </div>

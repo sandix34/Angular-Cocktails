@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cocktail } from '../../shared/models/cocktail.model';
 import { CocktailService } from '../../shared/services/cocktail.service';
 
@@ -9,20 +9,22 @@ import { CocktailService } from '../../shared/services/cocktail.service';
 })
 export class CocktailsListComponent implements OnInit {
 
-  @Input() cocktails: Cocktail[];
-  // déclarer la propriété output qui emettra des évènements de type nombre
-  @Output() pickEvent: EventEmitter<number> = new EventEmitter<number>();
+  public cocktails: Cocktail[];
   public activeCocktail: number = 0;
+  
+  constructor(private cocktailService: CocktailService) { }
+  
+  ngOnInit(): void {
+    this.cocktailService.cocktails.subscribe( (cocktails: Cocktail[]) => {
+      this.cocktails = cocktails;
+    })
+  }
 
   // émettre un évènement à chaque fois que la méthode pickCocktail est
   pickCocktail(index: number): void {
     this.activeCocktail = index;
-    this.pickEvent.emit(index);
+    this.cocktailService.selectCocktail(index);
   }
 
-  constructor(private cocktailService: CocktailService) { }
-
-  ngOnInit(): void {
-  }
 
 }
