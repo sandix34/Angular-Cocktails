@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Cocktail } from '../../shared/models/cocktail.model'
+import { Cocktail } from '../../shared/models/cocktail.model';
+import { CocktailService } from '../../shared/services/cocktail.service';
 
 @Component({
   selector: 'app-cocktails-list',
@@ -19,7 +20,7 @@ export class CocktailsListComponent implements OnInit {
     this.pickEvent.emit(index);
   }
 
-  constructor() { }
+  constructor(private cocktailService: CocktailService) { }
 
   ngOnInit(): void {
   }
