@@ -9,6 +9,7 @@ import { CocktailContainerComponent } from './cocktail-container/cocktail-contai
 import { ActiveDirective } from './shared/directives/active.directive';
 import { PanierComponent } from './panier/panier.component';
 import { IngredientsListComponent } from './panier/ingredients-list/ingredients-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { IngredientsListComponent } from './panier/ingredients-list/ingredients-
     IngredientsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
