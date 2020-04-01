@@ -19,12 +19,4 @@ export class CocktailsListComponent implements OnInit {
       this.cocktails = cocktails;
     })
   }
-
-  // émettre un évènement à chaque fois que la méthode pickCocktail est
-  pickCocktail(index: number): void {
-    this.activeCocktail = index;
-    this.cocktailService.selectCocktail(index);
-  }
-
-
 }
