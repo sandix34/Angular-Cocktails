@@ -1,4 +1,4 @@
-<form [formGroup]="cocktail" (ngSubmit)="createCocktail()">
+<form [formGroup]="cocktailForm" (ngSubmit)="createCocktail()">
   <div class="form-group">
     <label>Nom</label>
     <input formControlName="name" class="form-control" type="text">
@@ -15,12 +15,12 @@
     <button class="btn btn-success" type="button" (click)="addIngredient()">Ajouter Ingredient</button>
   <hr>
     <div formArrayName="ingredients">
-      <div [formGroup]="ingredient" class="form-group row" *ngFor="let ingredient of cocktail.get('ingredients')['controls']">
+      <div [formGroup]="ingredient" class="form-group row" *ngFor="let ingredient of cocktailForm.get('ingredients')['controls']">
         <input placeholder="name" formControlName="name" type="text" class="form-control col-8">
         <input placeholder="quantity" formControlName="quantity" type="number" class="form-control col-4">
       </div>
     </div>
   <hr>
-  <button [disabled]="cocktail.invalid" class="btn btn-primary">Sauvegarder</button>
+  <button [disabled]="cocktailForm.invalid" class="btn btn-primary">Sauvegarder</button>
   <button class="btn btn-secondary" [routerLink]="['../']">Annuler</button>
 </form>
