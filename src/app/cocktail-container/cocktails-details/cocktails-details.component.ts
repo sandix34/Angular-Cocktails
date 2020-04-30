@@ -22,13 +22,12 @@ export class CocktailsDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
-      if(params.get('index')) {
-        this.index = params.get('index'),
-        this.cocktail = this.cocktailService.getCocktail(params.get('index'));
+      if (params.get('index')) {
+        this.index = params.get('index');
       } else {
         this.index = 0;
-        this.cocktail = this.cocktailService.getCocktail(0);
       }
+      this.cocktailService.getCocktail(this.index).subscribe(cocktails => this.cocktail = cocktails);
     });
   }
 

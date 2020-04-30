@@ -20,8 +20,10 @@ export class CocktailEditComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params) => {
       if (params.index) {
         this.edit = true;
-        this.cocktail = this.cocktailService.getCocktail(params.index);
-        this.initForm(this.cocktail);
+        this.cocktailService.getCocktail(params.index).subscribe((cocktail: Cocktail) => {
+          this.cocktail = cocktail;
+          this.initForm(this.cocktail);
+        });
       } else {
         this.edit = false;
         this.initForm();
