@@ -1,5 +1,9 @@
 # AngularCocktail
 
+Application permettant de constituer un livre de recettes de coktails.
+
+![cocktails](https://user-images.githubusercontent.com/44428775/80721444-853e4b80-8afe-11ea-9122-c11fd34a63ed.gif)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
 ## Development server
